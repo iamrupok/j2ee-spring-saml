@@ -1,0 +1,84 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+       "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+	
+	
+
+	<bean id="usmSamlProps" lazy-init="true" scope="singleton"
+		class="com.frequencymarketing.common.saml.authentication.SamlProps">
+		<property name="keystore" value="/keys/usm/tyusmuat.keystore" />
+		<property name="keystorePass" value="TyUsmEpsilon_UAT_04Aug2008" />
+		<property name="keystoreAlias" value="usm" />
+		<property name="issuer" value="https://tyuat.epsilon.com" />
+		<property name="audienceRestriction" value="https://rewardsuat.thankyou.com" />
+		<property name="recipientURL"
+			value="http://localhost:8080/Struts-sp/SAMLAssertionSSOLogin.jspx" />
+		<property name="samlPostURL"
+			value="http://localhost:8080/Struts-sp/SAMLAssertionSSOLogin.jspx" />
+		<property name="sessionStateURL"
+			value="https://tyqa.bridge2rewards.com/b2r/SessionState.do" />
+		<property name="logoutURL"
+			value="http%3A%2F%2Ftyqa.bridge2rewards.com%2Fb2r%2FLogoutSilent.do" />
+	</bean>
+
+	<bean id="citiPortalProps" lazy-init="true" scope="singleton"
+		class="com.frequencymarketing.citi.saml.CitiPortalProps">
+		<property name="keystore" value="/keys/usm/tyusmuat.keystore" />
+		<property name="keystorePass" value="TyUsmEpsilon_UAT_04Aug2008" />
+		<property name="issuer" value="https://tyuat.epsilon.com" />
+		<property name="audienceRestriction" value="https://rewardsuat.thankyou.com" />
+		<property name="samlPostURL" value="tySso.jspx" />
+		<property name="applicationId" value="PTL" />
+		<property name="username" value="PTL_USER" />
+		<property name="password" value="poiu0987" />
+		<property name="apiName" value="ty_ptl_SearchAccounts" />
+		<property name="version" value="6.3" />
+		<property name="keepAliveURL" value="/US/JRS/portlet/thankyou/CBOLKAFromTY.do" />
+	</bean>
+	
+	<!--   PER 970 SAML-2.0 Compliant Bean Configuration  -->
+	
+	
+	<bean id="samlInitializer" class="org.opensaml.DefaultBootstrap" init-method="bootstrap"/>  
+	
+	<bean id="timeService" class="com.frequencymarketing.common.saml2.util.TimeService" />
+	<bean id="idService" class="com.frequencymarketing.common.saml2.util.IDService" />
+	<bean id="samlValidaotrSuite" class="com.frequencymarketing.common.saml2.xml.SAML2ValidatorSuite" />
+	<bean id="endpointGenerator" class="com.frequencymarketing.common.saml2.xml.EndpointGenerator" />
+
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+	   <property name="preferFileSystemAccess" value="false"/>
+	   <property name="velocityProperties">
+		<props>
+			<prop key="resource.loader">classpath</prop>
+			<prop key="classpath.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</prop>
+		</props>
+		</property>
+	</bean> 
+	
+	<bean id="samlParserPool"  class="org.opensaml.xml.parse.BasicParserPool" >
+
+			<property name="maxPoolSize" value="2" /> 
+	</bean>
+	
+	<bean id="decoder" class="org.opensaml.saml2.binding.decoding.HTTPPostSimpleSignDecoder">
+			<constructor-arg ref="samlParserPool"/>
+	</bean>
+	<bean id="encoder" class="org.opensaml.saml2.binding.encoding.HTTPPostSimpleSignEncoder">
+			<constructor-arg ref="velocityEngine"/>
+			<constructor-arg name="templateId"  value="/templates/saml2-post-simplesign-binding.vm"/>
+			<constructor-arg name="signXMLProtocolMessage" value="true"/>
+	</bean>
+	<bean id="bindingAdpater" class="com.frequencymarketing.common.saml2.core.PostBindingAdapter">
+		<constructor-arg ref="decoder"/>
+		<constructor-arg ref="encoder"/>
+		
+	</bean>
+	
+	<!-- End of  PER 970 SAML-2.0 Compliant Bean Configuration  -->
+	
+
+</beans>

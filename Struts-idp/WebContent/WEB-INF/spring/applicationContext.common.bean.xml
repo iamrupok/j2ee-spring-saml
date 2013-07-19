@@ -1,0 +1,50 @@
+    <!--
+      ## The session zones represent sets of URLs and Session Data keys that
+      ## are related. All urls that do not exist within the same zone as a
+      ## session data key will result in the session data being cleared.
+      -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">  
+	
+	
+	
+	
+	
+
+	<bean id="cryptoXml" lazy-init="true" scope="singleton"
+        class="com.frequencymarketing.citi.saml.CryptoXml">
+		<property name="samlProps">
+			<ref bean="citiPortalProps"/>
+		</property>
+		
+	</bean>
+	
+	<bean id="usmSaml" lazy-init="true" scope="singleton"
+        class="com.frequencymarketing.citi.saml.UsmSaml">
+		<property name="samlProps">
+			<ref bean="usmSamlProps"/>
+		</property>
+		<property name="cryptoXml">
+			<ref local="cryptoXml"/>
+		</property>
+    </bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</beans>
