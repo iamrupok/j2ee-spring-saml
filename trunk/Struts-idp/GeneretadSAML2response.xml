@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
+	Destination="http://localhost:8080/Struts-sp/SAMLAssertionSSOLogin.jspx"
+	ID="a7e92cb8-d563-4c05-b82b-07c12527b6ca" IssueInstant="2013-07-18T15:44:37.942Z"
+	Version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<saml2:Issuer xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+		Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://tyuat.epsilon.com</saml2:Issuer>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<ds:Reference URI="#a7e92cb8-d563-4c05-b82b-07c12527b6ca">
+				<ds:Transforms>
+					<ds:Transform
+						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+							PrefixList="xs" />
+					</ds:Transform>
+				</ds:Transforms>
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<ds:DigestValue>VfRk2v4vMFi+3VJQe/Db9g21qXQ=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>X9zl6ed0JmafB7vItfasikO/YyRUiiObn7wf7vByGEn1IJD5+hB2YxL2uO9O0xn1hnK1vOO8Q6J4y14GUA5sEYFLSDMEJBvRomwCv6BIfyRqg6ffH3hNDsAAGXi3y5N4B+JY3NcjJDqZdcU9WK55YGAcuIsLRoaSGfUNoqQvaZg=
+		</ds:SignatureValue>
+		<ds:KeyInfo>
+			<ds:X509Data>
+				<ds:X509Certificate>MIICSTCCAbKgAwIBAgIEUeZ0FjANBgkqhkiG9w0BAQUFADBpMQswCQYDVQQGEwJVUzELMAkGA1UE
+					CBMCVFgxDzANBgNVBAcTBklydmluZzEQMA4GA1UEChMHRXBzaWxvbjEQMA4GA1UECxMHRXBzaWxv
+					bjEYMBYGA1UEAxMPRXBzaWxvbiBFcHNpbG9uMB4XDTEzMDcxNzEwMzgxNFoXDTIzMDcxNTEwMzgx
+					NFowaTELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAlRYMQ8wDQYDVQQHEwZJcnZpbmcxEDAOBgNVBAoT
+					B0Vwc2lsb24xEDAOBgNVBAsTB0Vwc2lsb24xGDAWBgNVBAMTD0Vwc2lsb24gRXBzaWxvbjCBnzAN
+					BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAm4F2sgcuALy5XWX4DdfZCXoqbL1esebHjzpfAIIl7GY2
+					ynHxgfYaItlyhvXmdm1y6S3ImF0NsXxzsSYqT5lxHPWPE13TJl7avISBrr2mbCohpgA2EnQG+RCv
+					GtQJI0FC4uth0kfp6dFf15Axe2dalPwtWb7zRDRWRmM5lxzaPYsCAwEAATANBgkqhkiG9w0BAQUF
+					AAOBgQB06qeDVhfXcX05shMUu93jQER2QFxQatzDFkj6blMV2XY+pgOWFfwFFQG/XZozYnMPUoo2
+					FEsGyOpUiD+rzohlLFPutknNqivm8v/0vqdBjHn8rXDsNoAmghe1tgTHZdks5GFW/tZwLl5ErKTW
+					vKZ7vDVh3MAVt0NSuYU5IObV5Q==
+				</ds:X509Certificate>
+			</ds:X509Data>
+		</ds:KeyInfo>
+	</ds:Signature>
+	<saml2p:Status>
+		<saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+	</saml2p:Status>
+	<saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+		ID="a0b2f3cd-cb1c-4869-b9b1-80952d255a70" IssueInstant="2013-07-18T15:44:37.942Z"
+		Version="2.0">
+		<saml2:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">https://tyuat.epsilon.com
+		</saml2:Issuer>
+		<saml2:Subject>
+			<saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">123456789</saml2:NameID>
+			<saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+				<saml2:SubjectConfirmationData
+					Address="0:0:0:0:0:0:0:1" NotOnOrAfter="2013-07-18T15:46:37.893Z"
+					Recipient="http://localhost:8080/Struts-sp/SAMLAssertionSSOLogin.jspx" />
+			</saml2:SubjectConfirmation>
+		</saml2:Subject>
+		<saml2:Conditions NotBefore="2013-07-18T15:44:37.870Z"
+			NotOnOrAfter="2013-07-18T15:46:37.870Z">
+			<saml2:AudienceRestriction>
+				<saml2:Audience>https://rewardsuat.thankyou.com</saml2:Audience>
+			</saml2:AudienceRestriction>
+		</saml2:Conditions>
+		<saml2:AuthnStatement AuthnInstant="2013-07-18T15:44:34.376Z">
+			<saml2:AuthnContext>
+				<saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password
+				</saml2:AuthnContextClassRef>
+			</saml2:AuthnContext>
+		</saml2:AuthnStatement>
+		<saml2:AttributeStatement>
+			<saml2:Attribute Name="member_id"
+				NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:type="xs:string">123456789</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="agent_id"
+				NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:type="xs:string">agent-01</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="mbr_name_first"
+				NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:type="xs:string">Alam</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="mbr_name_last"
+				NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:type="xs:string">Nur</saml2:AttributeValue>
+			</saml2:Attribute>
+			<saml2:Attribute Name="point_balance"
+				NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<saml2:AttributeValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:type="xs:string">2586974</saml2:AttributeValue>
+			</saml2:Attribute>
+		</saml2:AttributeStatement>
+	</saml2:Assertion>
+</saml2p:Response>
+ 

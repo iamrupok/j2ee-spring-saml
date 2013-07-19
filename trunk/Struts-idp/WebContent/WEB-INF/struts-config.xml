@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+ 
+<struts-config>
+    <form-beans>
+        <form-bean name="LoginForm"
+            type="com.frequencymarketing.citi.view.http.struts.form.LoginForm" />
+    </form-beans>
+ 
+ 
+    <global-exceptions>
+    </global-exceptions>
+    <global-forwards></global-forwards>
+ 
+    <action-mappings>
+        <action path="/login" name="LoginForm" validate="true" input="/index.jspx"
+            type="com.frequencymarketing.citi.view.http.struts.action.external.LoginAction">
+            <forward name="success" path="/welcome.jsp" />
+            <forward name="failure" path="/index.jsp" />
+        </action>
+        <action path="/loginSeamless2"  type="com.frequencymarketing.citi.view.http.struts.action.external.LoginSeamlessSaml2Action">
+        	<forward name="success"  path="/samlpost.jsp"   redirect="false"  />
+            <forward name="failure" path="/error.jsp" redirect="true" />
+        </action>
+         <action path="/loginSeamless1"  type="com.frequencymarketing.citi.view.http.struts.action.external.LoginSeamlessSaml1Action">
+        	<forward name="success"  path="/samlpost.jsp"   redirect="false"  />
+            <forward name="failure" path="/error.jsp" redirect="true" />
+        </action>
+    </action-mappings>
+ 
+     
+    <message-resources parameter="MessageResource"></message-resources>
+     
+</struts-config>

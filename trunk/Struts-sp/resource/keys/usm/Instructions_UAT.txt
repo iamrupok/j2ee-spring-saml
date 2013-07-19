@@ -1,0 +1,29 @@
+Creating the keypair:
+
+
+aqureshi@TX-LT02867 /cygdrive/c/Tools/tfs_work/thankyou/HEAD/thankyou/source/resources/citi/keys/rearden
+$ keytool -genkeypair -alias usm -keyalg RSA -validity 3650 -keypass TyUsmEpsilon_UAT_04Aug2008 -keystore tyusmuat.keystore -storepass TyUsmEpsilon_UAT_04Aug2008 -v
+What is your first and last name?
+  [Unknown]:  Epsilon Epsilon
+What is the name of your organizational unit?
+  [Unknown]:  Epsilon
+What is the name of your organization?
+  [Unknown]:  Epsilon
+What is the name of your City or Locality?
+  [Unknown]:  Irving
+What is the name of your State or Province?
+  [Unknown]:  TX
+What is the two-letter country code for this unit?
+  [Unknown]:  US
+Is CN=Epsilon Epsilon, OU=Epsilon, O=Epsilon, L=Irving, ST=TX, C=US correct?
+  [no]:  yes
+
+Generating 1,024 bit RSA key pair and self-signed certificate (SHA1withRSA) with a validity of 3,650 days
+        for: CN=Epsilon Epsilon, OU=Epsilon, O=Epsilon, L=Irving, ST=TX, C=US
+[Storing tyreardenuat.keystore]
+
+=========================================================
+
+Exporting the cert:
+
+$ keytool -exportcert -alias usm -file EpsilonNON-PRODPublicKeyForUsm.cer -keystore tyusmuat.keystore -storepass TyUsmEpsilon_UAT_04Aug2008

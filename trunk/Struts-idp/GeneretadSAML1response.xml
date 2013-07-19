@@ -1,0 +1,80 @@
+<Response xmlns="urn:oasis:names:tc:SAML:1.0:protocol"
+	xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:samlp="urn:oasis:names:tc:SAML:1.0:protocol"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	IssueInstant="2013-07-19T11:47:02.749Z" MajorVersion="1" MinorVersion="1"
+	ResponseID="_6a9aa5344b89767206dae35bf3cb80a2">
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:CanonicalizationMethod>
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></ds:SignatureMethod>
+			<ds:Reference URI="#_6a9aa5344b89767206dae35bf3cb80a2">
+				<ds:Transforms>
+					<ds:Transform
+						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
+					<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+						<ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+							PrefixList="code ds kind rw saml samlp typens #default xsd xsi"></ec:InclusiveNamespaces>
+					</ds:Transform>
+				</ds:Transforms>
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+				<ds:DigestValue>orAJKQxz+mc62uRSs5yiS/gnaTo=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>OgvgijEOyzSGMKJeTzJRtUFX8BeZK1AtRi4TTcVX1ti6zcZpiPsoDR0u7GVjPr5+hb24TZ0BL1EmlARpaYJb/CLkyVQPLW0tqGe6Uo3YwDOijLb+5j2zvAAF8BD53DXgFI78A6qm5myUFMbDJdK1Lm+APzK9ywDqD6rWoUsDUzU=
+		</ds:SignatureValue>
+	</ds:Signature>
+	<Status>
+		<StatusCode Value="samlp:Success"></StatusCode>
+	</Status>
+	<Assertion xmlns="urn:oasis:names:tc:SAML:1.0:assertion"
+		AssertionID="_ee59b9eef5410f95c40a93c374f7cfb1" IssueInstant="2013-07-19T11:47:02.842Z"
+		Issuer="https://tyuat.epsilon.com" MajorVersion="1" MinorVersion="1">
+		<Conditions NotBefore="2013-07-19T11:46:32.831Z"
+			NotOnOrAfter="2013-07-19T11:48:32.831Z">
+			<AudienceRestrictionCondition>
+				<Audience>https://rewardsuat.thankyou.com</Audience>
+			</AudienceRestrictionCondition>
+		</Conditions>
+		<AuthenticationStatement
+			AuthenticationInstant="2013-07-19T11:47:02.815Z"
+			AuthenticationMethod="urn:oasis:names:tc:SAML:1.0:am:password">
+			<Subject>
+				<NameIdentifier>123456789</NameIdentifier>
+				<SubjectConfirmation>
+					<ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:bearer
+					</ConfirmationMethod>
+				</SubjectConfirmation>
+			</Subject>
+			<SubjectLocality IPAddress="0:0:0:0:0:0:0:1"></SubjectLocality>
+		</AuthenticationStatement>
+		<AttributeStatement>
+			<Subject>
+				<NameIdentifier>123456789</NameIdentifier>
+				<SubjectConfirmation>
+					<ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:bearer
+					</ConfirmationMethod>
+				</SubjectConfirmation>
+			</Subject>
+			<Attribute AttributeName="member_id"
+				AttributeNamespace="urn:oasis:names:tc:SAML:1.0:assertion">
+				<AttributeValue>123456789</AttributeValue>
+			</Attribute>
+			<Attribute AttributeName="agent_id"
+				AttributeNamespace="urn:oasis:names:tc:SAML:1.0:assertion">
+				<AttributeValue>agent-01</AttributeValue>
+			</Attribute>
+			<Attribute AttributeName="mbr_name_first"
+				AttributeNamespace="urn:oasis:names:tc:SAML:1.0:assertion">
+				<AttributeValue>Alam</AttributeValue>
+			</Attribute>
+			<Attribute AttributeName="mbr_name_last"
+				AttributeNamespace="urn:oasis:names:tc:SAML:1.0:assertion">
+				<AttributeValue>Nur</AttributeValue>
+			</Attribute>
+			<Attribute AttributeName="point_balance"
+				AttributeNamespace="urn:oasis:names:tc:SAML:1.0:assertion">
+				<AttributeValue>2586974</AttributeValue>
+			</Attribute>
+		</AttributeStatement>
+	</Assertion>
+</Response>
